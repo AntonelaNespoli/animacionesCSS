@@ -1,0 +1,181 @@
+body{
+    color: rgb(175, 23, 129);
+    background: whitesmoke;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.base{
+    font-family: 'Arial';
+    background-color:plum;
+    text-align: center;
+    font-weight: bolder;
+    width: 80px;
+    margin: 15px 10px;
+    padding:5px 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+@keyframes giroX{
+    0%{
+        opacity:0.5;
+        transform: perspective(100px) rotateX(90deg);
+    }
+    40%{
+        transform: perspective(100px) rotateX(-20deg);
+    }
+    70%{
+        transform: perspective(100px) rotateX(20deg);
+    }
+    90%{
+        transform: perspective(100px) rotateX(-10deg);
+    }
+}
+.giroX {
+    animation: 1.5s giroX 1;
+    backface-visibility: visible;
+}
+
+@keyframes giroY{
+    0%{
+        opacity:0.5;
+        transform: perspective(200px) rotateY(90deg);
+    }
+    40%{
+        transform: perspective(200px) rotateY(-20deg);
+    }
+    70%{
+        transform: perspective(200px) rotateY(20deg);
+    }
+    90%{
+        transform: perspective(200px) rotateY(-10deg);
+    }
+}
+.giroY {
+    animation: 1.5s giroY 1;
+    backface-visibility: visible;
+}
+@keyframes giroOutY{
+    0%{
+        opacity:1;
+    }
+    100%{
+        opacity:0.3;
+        transform: perspective(200px) rotateY(90deg);
+    }
+}
+.giroOutY{
+    animation: 1.5s giroOutY 1;
+    opacity:0;
+}
+
+@keyframes giroOutX{
+    0%{
+        opacity:1;
+    }
+    100%{
+        opacity:0.3;
+        transform: perspective(200px) rotateX(90deg);
+    }
+}
+.giroOutX{
+    animation: 1.5s giroOutX 1;
+    opacity:0;
+}
+
+@keyframes giro3d{
+    40%{
+        transform: perspective(300px) translateZ(120px) rotateY(170deg);
+    }
+    50%{
+        transform: perspective(300px) translateZ(120px) rotateY(190deg);
+    }
+    80%{
+        transform: perspective(300px) translateZ(0px) rotateY(360deg);
+    }
+    100%{
+        transform: perspective(300px) rotateY(360deg);
+    }
+}
+.giro{
+    animation: 1s giro3d 1;
+    backface-visibility: visible;
+}
+
+/*Animaciones complejas*/
+
+.box{
+    display: inline-block;
+    margin:50px 20px;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transition-duration: 0.5s;
+    transform-style: preserve-3d;
+    transform-origin: left center;
+}
+.box > div{
+    border:2px solid black;
+    position: absolute;
+    width:100%;
+    height: 100%;
+}
+.front{
+    opacity:0.75;
+    box-shadow: inset 0px 2px 20px black;
+}
+.back{
+    background-color:plum;
+    color:rgb(34, 33, 33);
+    left:100px;
+    transform: translateZ(-100px) rotateY(90deg);
+}
+.back>div{
+    margin:4%;
+}
+.box:hover{
+    transform: perspective(800px) rotateY(-80deg);
+}
+.box:hover .front{
+    opacity: 1;
+}
+
+/*animacion globo terraquio*/
+@keyframes rotacion{
+0%{
+    background-position: 0px 0px;
+}
+100%{
+    background-position: -505px 0px;
+}
+}
+.mundo{
+    width: 151px;
+    height: 150px;
+    margin:100px;
+    background-image: url("images/images.png");
+    border-radius: 50%;
+    animation:rotacion 15s infinite linear;
+    box-shadow: 0px 5px 15px #888;
+}
+.sombra3d{
+    background-image: url("images/sombra.png");
+    width: 158px;
+    height: 160px;
+    opacity:0.3;
+}
+/*Texto 3d*/
+.texto{
+    margin: 10%;
+}
+.texto>p{
+    font-size: 4em;
+    color:rgb(170, 103, 233);
+    /*text-shadow: 2px 0px 2px black;*/
+}
+
+.texto>.texto3d{
+    text-shadow: -1px 1px 0px rgb(50, 1, 97),
+                 -2px 2px 0px rgb(50, 1, 97),
+                 -3px 3px 0px rgb(50, 1, 97),
+                 -4px 4px 0px rgb(50, 1, 97),
+                 -5px 5px 0px rgb(50, 1, 97);
+}

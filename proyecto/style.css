@@ -1,0 +1,85 @@
+body{
+    background-color: #292929;
+    color: #fff;
+    font-family: Helvetica;
+}
+#content{
+    text-align: center;
+    width: 100%;
+    transform-style: preserve-3d;
+    transform: perspective(6000px);
+}
+.rueda{
+    margin:250px 50px;
+    height: 150px;
+    width: 150px;
+    transform-style: preserve-3d;
+    position: absolute;
+    top:0px;
+    -webkit-transition: -webkit-transform 1 s;
+}
+
+.card{
+    height: 150px;
+    width: 150px;
+    border-radius: 5px;
+    border:1px solid #fff;
+    font-size: 5em;
+    font-weight: bolder;
+    line-height: 140px;
+    background-color: rgba(10,10,10,0.9);
+    position:absolute;
+}
+.rueda div:nth-of-type(1){
+    transform: rotateX(0deg) translateZ(240px);
+}
+.rueda div:nth-of-type(2){
+    transform: rotateX(36deg) translateZ(240px);
+}
+.rueda div:nth-of-type(3){
+    transform: rotateX(72deg) translateZ(240px);
+}
+.rueda div:nth-of-type(4){
+    transform: rotateX(108deg) translateZ(240px);
+}
+.rueda div:nth-of-type(5){
+    transform: rotateX(144deg) translateZ(240px);
+}
+.rueda div:nth-of-type(6){
+    transform: rotateX(180deg) translateZ(240px);
+}
+.rueda div:nth-of-type(7){
+    transform: rotateX(216deg) translateZ(240px);
+}
+.rueda div:nth-of-type(8){
+    transform: rotateX(252deg) translateZ(240px);
+}
+.rueda div:nth-of-type(9){
+    transform: rotateX(288deg) translateZ(240px);
+}
+.rueda div:nth-of-type(10){
+    transform: rotateX(324deg) translateZ(240px);
+}
+#hours1, #hours2, #minutes1, #minutes2, #seconds1, #seconds2{
+    transform-style: preserve-3d;
+    transform-origin: center center;
+}
+
+#hours1{
+    left:0px;   
+}
+#hours2{
+    left:160px;
+}
+#minutes1{
+    left:440px;
+}
+#minutes2{
+    left:600px;
+}
+#seconds1{
+    left:880px;
+}
+#seconds2{
+    left:1040px;
+}
